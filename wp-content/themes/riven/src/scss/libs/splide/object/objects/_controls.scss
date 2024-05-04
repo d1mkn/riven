@@ -1,0 +1,20 @@
+@use '../../../../base/base' as *;
+
+.splide__controls {
+    margin: 5.6rem auto 0;
+    width: fit-content;
+    position: relative;
+
+    @media (max-width: $mobile) {
+        margin: 4rem auto 0;
+        width: 100%;
+    }
+
+    &.desk-hide {
+        display: none;
+
+        @media (max-width: $mobile) {
+            display: block;
+        }
+    }
+}

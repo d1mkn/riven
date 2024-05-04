@@ -1,0 +1,56 @@
+@use '../../../../base/base' as *;
+
+.splide {
+    $root: &;
+
+    &__arrow {
+        padding: 0;
+
+        width: 2.4rem;
+        height: 2.4rem;
+
+        position: absolute;
+        top: 0;
+
+        font-size: 0;
+
+        outline: none;
+        border: none;
+        border-radius: 0.36rem;
+
+        cursor: pointer;
+        z-index: 1;
+
+        &[disabled]:before {
+            color: $light-green;
+        }
+
+        svg {
+            display: none;
+        }
+
+        &::before {
+            @include icomoon;
+            content: $icon-arrow;
+            font-size: 1.5rem;
+            color: $dark-green;
+            transition: color 0.2s ease;
+        }
+
+        &--prev {
+            left: 0;
+            transform: rotate(90deg);
+        }
+
+        &--next {
+            right: 0;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &:not(.is-overflow) {
+        #{ $root }__arrow {
+            display: none;
+        }
+    }
+}
