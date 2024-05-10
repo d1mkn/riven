@@ -44,6 +44,7 @@ body {
     color: $dark-green;
 
     overflow-x: hidden;
+    background-color: $milky;
 
     #wpadminbar {
         position: absolute;
@@ -130,13 +131,21 @@ dd {
     margin: 0;
 }
 
+input {
+    border-width: 0;
+}
+
+textarea {
+    border-width: 0;
+    resize: none;
+}
+
 .container {
     width: 100%;
-    max-width: 114rem;
-    padding: 0 1.5rem;
+    max-width: 127.3rem;
     margin: 0 auto;
 
     @media (max-width: $mobile) {
-        padding: 0 1.6rem;
+        padding: 0 1.4rem;
     }
 }

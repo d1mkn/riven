@@ -1,0 +1,63 @@
+{
+    "key": "group_663e470e62071",
+    "title": "Main Data",
+    "fields": [
+        {
+            "key": "field_663e4782fb42b",
+            "label": "Номер телефону для посилання",
+            "name": "phone_number_href",
+            "type": "text",
+            "instructions": "Приклад: +380679460025",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_663e4b0a914c5",
+            "label": "Номер телефону для відображення",
+            "name": "phone_number_content",
+            "type": "text",
+            "instructions": "Приклад: +380 67 946 0025",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-main-data"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1715360167
+}

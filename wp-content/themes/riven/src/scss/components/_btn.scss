@@ -1,0 +1,16 @@
+@import '../base/base';
+
+.btn {
+    border-radius: 1rem;
+    color: $milky;
+}
+
+.btn-red {
+    padding: 1rem;
+    background-color: $wine-red;
+}
+
+.btn-green {
+    padding: 0.8rem;
+    background-color: $dark-green;
+}

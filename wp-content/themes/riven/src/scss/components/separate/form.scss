@@ -1,0 +1,64 @@
+@import '../../base/base';
+
+.form {
+    width: 100%;
+
+    .wpforms-field {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wpforms-field-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        border-radius: 0.8rem;
+        background-color: $light-green;
+    }
+
+    input {
+        height: 4.8rem;
+    }
+
+    textarea {
+        height: 7.1rem;
+    }
+
+    .wpforms-field-label {
+        margin-bottom: 0.4rem;
+        color: $dark-green;
+    }
+
+    .wpforms-submit-container {
+        margin-top: 2.4rem;
+        text-align: center;
+    }
+
+    // no script message
+    #wpforms-error-noscript {
+        display: none;
+    }
+}
+
+// phone codes list wrap
+.iti {
+    align-items: center;
+    background-color: $milky;
+}
+
+// phone codes list another wrap
+#iti-0__dropdown-content {
+    max-width: 44.8rem;
+    max-height: 20rem;
+}
+
+// phone codes list
+body .iti__country-list {
+    border-radius: 1rem;
+    background-color: $milky !important;
+}

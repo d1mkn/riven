@@ -5,7 +5,7 @@ if (!function_exists('theme_register_nav')) :
     {
         register_nav_menus(
             [
-                'header-menu-en' => 'Header menu en',
+                '...' => 'Header menu en',
                 'header-menu-fr' => 'Header menu fr',
                 'footer-menu-en' => 'Footer menu en',
                 'footer-menu-fr' => 'Footer menu fr',
@@ -118,8 +118,8 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu
         endif;
 
         if (
-            strripos($class_names, 'span') === false ||
-            strripos($class_names, 'span') !== false && strripos($class_names, 'except-mainpage') !== false && is_front_page()
+            strripos($class_names, 'div') === false ||
+            strripos($class_names, 'div') !== false && strripos($class_names, 'except-mainpage') !== false && is_front_page()
         ) :
             $structure = '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s';
             if (!empty($item->url)) :
@@ -127,7 +127,7 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu
             endif;
 
         else :
-            $structure = '%1$s<span%2$s>%3$s%4$s%5$s</span>%6$s';
+            $structure = '%1$s<div%2$s>%3$s%4$s%5$s</div>%6$s';
             if (!empty($item->url)) :
                 $attributes .= $item->url !== '#'  ?  ' data-url="'   . esc_attr($item->url) . '"' : '';
             endif;
@@ -142,7 +142,7 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu
                 $structure,
                 $args->before,
                 $attributes,
-                (!empty($icon) ? $args->link_before . '<i class="menu-icon ' . $icon . '"></i><span>' : $args->link_before . '<span>'),
+                (!empty($icon) ? $args->link_before . '<i class="menu-icon ' . $icon . '"></i><div>' : $args->link_before . '<div>'),
                 apply_filters('the_title', $item->title, $item->ID),
                 $args->link_after,
                 $args->after
