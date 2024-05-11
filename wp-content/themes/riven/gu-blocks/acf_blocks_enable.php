@@ -105,6 +105,43 @@ if (function_exists('services')) {
 // ###############################################################################################
 
 /**
+ * ACF Gutenberg Block "ACF Block About Us"
+ */
+if (!function_exists('about_us')) {
+
+    function about_us()
+    {
+
+        acf_register_block_type(
+            [
+                'name'            => 'About Us',
+                'title'           => __('About Us'),
+                'render_callback' => 'theme_acf_blocks_render_callback',
+                'category'        => 'common',
+                'icon'            => 'grid-view',
+                'keywords'        => ['title', 'subtitle', 'about', 'us', 'reviews', 'testimonials'],
+                'mode'            => 'edit',
+                'enqueue_assets' => function () {
+                    if (!is_admin()) :
+                        wp_enqueue_style('about-us-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-about-us.css',  ['splide-css'], _S_VERSION);
+                        wp_enqueue_style('splide-css', get_template_directory_uri() . '/dist/css/libs/splide/index.css', [], _S_VERSION);
+
+                        wp_enqueue_script('about-us-js', get_template_directory_uri() . '/dist/js/gu-blocks/acf-block-about-us.js',  ['splide-js'], _S_VERSION);
+                        wp_enqueue_script('splide-js', get_template_directory_uri() . '/dist/js/libs/splide.min.js', [], _S_VERSION, true);
+                    endif;
+                }
+            ]
+        );
+    }
+}
+
+if (function_exists('about_us')) {
+    add_action('acf/init', 'about_us');
+}
+
+// ###############################################################################################
+
+/**
  * Enable ACF Blocks render function
  */
 if (!function_exists('theme_acf_blocks_render_callback')) {

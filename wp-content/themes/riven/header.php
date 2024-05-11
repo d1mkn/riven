@@ -8,7 +8,7 @@
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html lang="uk-UA">
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
