@@ -1,11 +1,11 @@
 {
-    "key": "group_663ea9644cbd6",
-    "title": "acf-block-benefits",
+    "key": "group_663eb6c63e6c5",
+    "title": "acf-block-service",
     "fields": [
         {
-            "key": "field_663ea97250ea4",
-            "label": "Заголовок -- \"Блок Переваги\"",
-            "name": "title_benefits",
+            "key": "field_663eb6d2e9bad",
+            "label": "Заголовок -- \"Блок Послуги\"",
+            "name": "title_services",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -22,28 +22,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_663eaa3950ea5",
-            "label": "Підзаголовок -- \"Блок Переваги\"",
-            "name": "subtitle_benefits",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_663eaa6750ea6",
-            "label": "Перелік переваг -- \"Блок Переваги\"",
-            "name": "items_benefits",
+            "key": "field_663eb702e9bae",
+            "label": "Перелік послуг -- \"Блок Послуги\"",
+            "name": "items_services",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -55,14 +36,14 @@
             },
             "collapsed": "",
             "min": 0,
-            "max": 5,
+            "max": 8,
             "layout": "block",
-            "button_label": "Додати Перевагу",
+            "button_label": "Додати Послугу",
             "sub_fields": [
                 {
-                    "key": "field_663eaa8250ea7",
-                    "label": "Іконка",
-                    "name": "icon_benefits",
+                    "key": "field_663eb77ae9baf",
+                    "label": "Зображення",
+                    "name": "img_services",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -84,9 +65,9 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_663eaaae50ea8",
-                    "label": "Альт іконки",
-                    "name": "icon_alt_benefits",
+                    "key": "field_663eb79fe9bb0",
+                    "label": "Альт зображення",
+                    "name": "img_alt_services",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -103,15 +84,15 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_663eaaed50ea9",
-                    "label": "Опис",
-                    "name": "descr_benefits",
+                    "key": "field_663eb7bfe9bb1",
+                    "label": "Послуга",
+                    "name": "caption_services",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "70",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -120,6 +101,25 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_663eb7ffe9bb2",
+                    "label": "Опис Послуги",
+                    "name": "descr_services",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 5,
+                    "new_lines": ""
                 }
             ]
         }
@@ -129,7 +129,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/benefits"
+                "value": "acf\/services"
             }
         ]
     ],
@@ -142,5 +142,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715386452
+    "modified": 1715387982
 }

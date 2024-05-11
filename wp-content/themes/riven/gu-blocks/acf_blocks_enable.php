@@ -51,7 +51,7 @@ if (!function_exists('benefits')) {
                 'render_callback' => 'theme_acf_blocks_render_callback',
                 'category'        => 'common',
                 'icon'            => 'editor-insertmore',
-                'keywords'        => ['title', 'subtitle','benefits'],
+                'keywords'        => ['title', 'subtitle', 'benefits'],
                 'mode'            => 'edit',
                 'enqueue_assets' => function () {
                     if (!is_admin()) :
@@ -65,6 +65,41 @@ if (!function_exists('benefits')) {
 
 if (function_exists('benefits')) {
     add_action('acf/init', 'benefits');
+}
+
+// ###############################################################################################
+
+/**
+ * ACF Gutenberg Block "ACF Block Services"
+ */
+if (!function_exists('services')) {
+
+    function services()
+    {
+
+        acf_register_block_type(
+            [
+                'name'            => 'Services',
+                'title'           => __('Services'),
+                'render_callback' => 'theme_acf_blocks_render_callback',
+                'category'        => 'common',
+                'icon'            => 'grid-view',
+                'keywords'        => ['title', 'subtitle', 'services'],
+                'mode'            => 'edit',
+                'enqueue_assets' => function () {
+                    if (!is_admin()) :
+                        wp_enqueue_style('services-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-services.css',  [], _S_VERSION);
+
+                        wp_enqueue_script('services-js', get_template_directory_uri() . '/dist/js/gu-blocks/acf-block-services.js',  [], _S_VERSION);
+                    endif;
+                }
+            ]
+        );
+    }
+}
+
+if (function_exists('services')) {
+    add_action('acf/init', 'services');
 }
 
 // ###############################################################################################

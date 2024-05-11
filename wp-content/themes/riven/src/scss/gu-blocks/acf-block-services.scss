@@ -1,0 +1,212 @@
+@import '../base/base';
+
+.services {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @media (max-width: $mobile) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-bottom: 1.3rem;
+    }
+
+    &__title {
+        margin-bottom: 4rem;
+
+        @media (max-width: $mobile) {
+            padding-left: 0.4rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (max-width: $mobile) {
+            margin-left: -0.4rem;
+            width: calc(100% + 0.8rem);
+            transition: height 0.5s;
+        }
+    }
+
+    &__item {
+        width: 25%;
+        height: 36.4rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+
+        background-color: $light-green;
+
+        @media (max-width: $mobile) {
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+            transition: height 0.5s, opacity 0.3s linear, visibility 0.3s linear;
+        }
+
+        // hide on mobile
+        &.hidden {
+            @media (max-width: $mobile) {
+                height: 0rem;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &::after {
+            content: '';
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            backdrop-filter: blur(0rem);
+            transition: backdrop-filter 0.1s linear;
+        }
+
+        &:hover {
+            &::after {
+                backdrop-filter: blur(0.4rem);
+            }
+
+            .services__item-text {
+                height: 25.5rem;
+                min-width: 25.6rem;
+
+                &::after {
+                    opacity: 1;
+                    backdrop-filter: blur(0.4rem);
+                }
+            }
+
+            .services__item-caption {
+                border-radius: 1rem 1rem 0rem 0rem;
+            }
+
+            .services__item-descr {
+                opacity: 1;
+            }
+        }
+
+        &-img {
+            align-self: center;
+        }
+
+        &-text {
+            height: 3.9rem;
+            min-width: 0rem;
+
+            position: absolute;
+            left: 50%;
+            bottom: 4rem;
+            z-index: 1;
+            transform: translate(-50%, 0rem);
+
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: height 0.2s linear, min-width 0.2s;
+
+            &::after {
+                content: '';
+
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+
+                opacity: 0;
+                background: radial-gradient(circle at 50% 50%, #14463e 19.3999633193%, rgba(18, 73, 63, 0) 100%);
+                backdrop-filter: blur(0rem);
+                transition: opacity 0.2s linear, backdrop-filter 0.2s linear;
+            }
+        }
+
+        &-caption {
+            margin: 0;
+            padding: 1rem;
+
+            color: $dark-green;
+            text-align: center;
+            text-wrap: nowrap;
+            word-wrap: none;
+
+            border-radius: 1rem;
+            background-color: $milky;
+            transition: border-radius 0.2s linear;
+        }
+
+        &-descr {
+            margin: 0;
+            padding: 1.3rem 2.2rem;
+
+            color: $milky;
+            text-align: center;
+
+            opacity: 0;
+            transition: opacity 0.2s linear;
+        }
+    }
+
+    &__button {
+        display: none;
+
+        @media (max-width: $mobile) {
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+
+            border-radius: 0rem 0rem 0.8rem 0.8rem;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        &.active {
+            .services__button-text-more {
+                height: 0rem;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .services__button-text-less {
+                height: 1.9rem;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            i {
+                transform: rotate(-90deg);
+            }
+        }
+
+        i {
+            margin: 0.2rem auto;
+            font-size: 1.6rem;
+            transform: rotate(90deg);
+            transition: transform 0.2s;
+        }
+
+        &-text-more,
+        &-text-less {
+            width: 100%;
+            height: 1.9rem;
+            text-align: center;
+            transition: height 0.2s linear, opacity 0.2s linear, visibility 0.2s linear;
+        }
+
+        &-text-less {
+            height: 0rem;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
