@@ -72,7 +72,7 @@
         {
             "key": "field_663e421e3c673",
             "label": "Альт лого -- \"Блок Промо\"",
-            "name": "logo_alt_promo_copy",
+            "name": "logo_alt_promo",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -164,5 +164,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715356249
+    "modified": 1715426034
 }

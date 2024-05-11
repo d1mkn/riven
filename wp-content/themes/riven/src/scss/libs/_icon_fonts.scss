@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: '#{$icomoon-font-family}';
-    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rzdt2z');
-    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rzdt2z#iefix') format('embedded-opentype'),
-        url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?rzdt2z') format('truetype'),
-        url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?rzdt2z') format('woff'),
-        url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?rzdt2z##{$icomoon-font-family}') format('svg');
+    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?sckavb');
+    src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?sckavb#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?sckavb') format('truetype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?sckavb') format('woff'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?sckavb##{$icomoon-font-family}') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -33,9 +33,19 @@ i,
         content: $icon-burger;
     }
 }
+.icon-instagram {
+    &:before {
+        content: $icon-instagram;
+    }
+}
 .icon-facebook {
     &:before {
         content: $icon-facebook;
+    }
+}
+.icon-arrow {
+    &:before {
+        content: $icon-arrow;
     }
 }
 .icon-tiktok {
@@ -43,13 +53,8 @@ i,
         content: $icon-tiktok;
     }
 }
-.icon-instagram {
+.icon-close {
     &:before {
-        content: $icon-instagram;
-    }
-}
-.icon-arrow {
-    &:before {
-        content: $icon-arrow;
+        content: $icon-close;
     }
 }

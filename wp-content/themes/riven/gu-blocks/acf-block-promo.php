@@ -43,7 +43,7 @@ if (!empty($promo_fields)) :
 
         <dialog class="popup__overlay" data-popup-name="popup-callback">
             <div class="popup__content promo__popup">
-                <button class="popup__close icon-close icomoon btn" aria-label="Close popup" data-popup-close="popup-callback"></button>
+                <button class="popup__close icon-close icomoon btn" aria-label="Закрити попап" data-popup-close="popup-callback"></button>
 
                 <p class="popup__title h1-t">Зворотній зв’язок</p>
                 <?= do_shortcode('[wpforms id="31"]') ?>

@@ -64,22 +64,17 @@
     }
 
     &__close {
-        padding: 1rem;
+        padding: 0.7rem;
 
         position: absolute;
-        top: 0.6rem;
-        right: 0.6rem;
+        top: 1.6rem;
+        right: 1.6rem;
 
-        font-size: 2.4rem;
+        color: $dark-green;
+        font-size: 1rem;
 
         cursor: pointer;
-        opacity: 0.5;
-        background-color: transparent;
-        border: none;
-
-        @media (max-width: $mobile) {
-            right: 0.1rem;
-        }
+        opacity: 1;
     }
 
     &__title {

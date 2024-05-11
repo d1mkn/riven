@@ -10,10 +10,11 @@ $icomoon-font-family: 'icomoon' !default;
 $icomoon-font-path: '../fonts/icomoon' !default;
 
 $icon-burger: unquote('"\\e900"');
-$icon-facebook: unquote('"\\e902"');
-$icon-tiktok: unquote('"\\e904"');
 $icon-instagram: unquote('"\\e901"');
+$icon-facebook: unquote('"\\e902"');
 $icon-arrow: unquote('"\\e903"');
+$icon-tiktok: unquote('"\\e904"');
+$icon-close: unquote('"\\e905"');
 
 // Colors
 $dark-green: #12493f;
@@ -21,3 +22,4 @@ $light-green: #cde3d6;
 $milky: #fffbe5;
 $brown: #d9b784;
 $wine-red: #b65959;
+$light-red: #ffc7c7;
