@@ -1,0 +1,81 @@
+@import '../base/base';
+
+.benefits {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    position: relative;
+
+    @media (max-width: $mobile) {
+        padding: 2.4rem 4rem;
+    }
+
+    &::after {
+        content: '';
+
+        width: 100vw;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: -1;
+
+        transform: translateX(-50%);
+        background-color: $light-green;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 2rem;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem 2rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        @media (max-width: $mobile) {
+            width: 10.9rem;
+            justify-content: center;
+
+            &:first-child {
+                padding: 1.45rem 0;
+                width: 100%;
+                order: 5;
+            }
+        }
+
+        &-icon {
+            width: 3.6rem;
+            height: 3.6rem;
+
+            img {
+                object-fit: contain;
+            }
+        }
+
+        &-descr {
+            margin: 0;
+
+            @media (max-width: $mobile) {
+                text-align: center;
+            }
+        }
+    }
+}
