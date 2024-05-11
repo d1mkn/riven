@@ -19,7 +19,7 @@ if (!function_exists('promo')) {
                 'mode'            => 'edit',
                 'enqueue_assets' => function () {
                     if (!is_admin()) :
-                        wp_enqueue_style('promo-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-promo.css',  ['popup-css'], _S_VERSION);
+                        wp_enqueue_style('promo-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-promo.css', ['popup-css'], _S_VERSION);
 
                         wp_enqueue_style('popup-css', get_template_directory_uri() . '/dist/css/components/separate/popup.css', [], _S_VERSION);
                         wp_enqueue_style('form-css', get_template_directory_uri() . '/dist/css/components/separate/form.css', [], _S_VERSION);
@@ -55,7 +55,7 @@ if (!function_exists('benefits')) {
                 'mode'            => 'edit',
                 'enqueue_assets' => function () {
                     if (!is_admin()) :
-                        wp_enqueue_style('benefits-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-benefits.css',  [], _S_VERSION);
+                        wp_enqueue_style('benefits-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-benefits.css', [], _S_VERSION);
                     endif;
                 }
             ]
@@ -88,9 +88,9 @@ if (!function_exists('services')) {
                 'mode'            => 'edit',
                 'enqueue_assets' => function () {
                     if (!is_admin()) :
-                        wp_enqueue_style('services-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-services.css',  [], _S_VERSION);
+                        wp_enqueue_style('services-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-services.css', [], _S_VERSION);
 
-                        wp_enqueue_script('services-js', get_template_directory_uri() . '/dist/js/gu-blocks/acf-block-services.js',  [], _S_VERSION);
+                        wp_enqueue_script('services-js', get_template_directory_uri() . '/dist/js/gu-blocks/acf-block-services.js', [], _S_VERSION);
                     endif;
                 }
             ]
@@ -118,12 +118,12 @@ if (!function_exists('about_us')) {
                 'title'           => __('About Us'),
                 'render_callback' => 'theme_acf_blocks_render_callback',
                 'category'        => 'common',
-                'icon'            => 'grid-view',
+                'icon'            => 'align-left',
                 'keywords'        => ['title', 'subtitle', 'about', 'us', 'reviews', 'testimonials'],
                 'mode'            => 'edit',
                 'enqueue_assets' => function () {
                     if (!is_admin()) :
-                        wp_enqueue_style('about-us-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-about-us.css',  ['splide-css'], _S_VERSION);
+                        wp_enqueue_style('about-us-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-about-us.css', ['splide-css'], _S_VERSION);
                         wp_enqueue_style('splide-css', get_template_directory_uri() . '/dist/css/libs/splide/index.css', [], _S_VERSION);
 
                         wp_enqueue_script('about-us-js', get_template_directory_uri() . '/dist/js/gu-blocks/acf-block-about-us.js',  ['splide-js'], _S_VERSION);
@@ -137,6 +137,39 @@ if (!function_exists('about_us')) {
 
 if (function_exists('about_us')) {
     add_action('acf/init', 'about_us');
+}
+
+// ###############################################################################################
+
+/**
+ * ACF Gutenberg Block "ACF Block routes"
+ */
+if (!function_exists('routes')) {
+
+    function routes()
+    {
+
+        acf_register_block_type(
+            [
+                'name'            => 'Routes',
+                'title'           => __('Routes'),
+                'render_callback' => 'theme_acf_blocks_render_callback',
+                'category'        => 'common',
+                'icon'            => 'admin-site-alt',
+                'keywords'        => ['title', 'subtitle', 'routes'],
+                'mode'            => 'edit',
+                'enqueue_assets' => function () {
+                    if (!is_admin()) :
+                        wp_enqueue_style('routes-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-routes.css', [], _S_VERSION);
+                    endif;
+                }
+            ]
+        );
+    }
+}
+
+if (function_exists('routes')) {
+    add_action('acf/init', 'routes');
 }
 
 // ###############################################################################################

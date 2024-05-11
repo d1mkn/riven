@@ -41,3 +41,15 @@ function print_link($href, $class = null, $content = null, $attr = null, $email 
     echo '<a class="' . $class . '" href="' . $href_attribute . '" ' . $attr . '>' . $content . '</a>';
 }
 ###############################################################################################
+
+/* Function to print picture element */
+function print_picture($img_desk_tag = null,  $img_mob_url = null, $class = null)
+{
+    if (empty($img_desk_tag)) return;
+
+    $source = $img_mob_url ? '<source media="(max-width: 576px)" srcset="' . esc_url($img_mob_url) . '">' : '';
+
+    echo '<picture' . ($class ? ' class="' . $class . '"' : '') . '>' . $source . $img_desk_tag . '</picture>';
+}
+
+###############################################################################################
