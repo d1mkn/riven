@@ -70,6 +70,7 @@ local-xdebuginfo.php
 wp-content/autoptimize_404_handler.php
 wp-content/object-cache.php
 wp-content/themes/riven/dist
+wp-content/mu-plugins
 
 # exception
 !files/*
