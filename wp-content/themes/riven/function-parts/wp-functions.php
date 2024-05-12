@@ -74,6 +74,7 @@ function printNavEls($id, $class)
                     print_elem('li', $class, $blocks_to_nav[$block['blockName']], 'data-url="#' . $blocks_to_nav[$block['blockName']] . '" data-nav');
                 endif;
             endforeach;
+            print_elem('li', $class, 'Контакти', 'data-url="#' . 'Контакти' . '" data-nav');
         endif;
     endif;
 }

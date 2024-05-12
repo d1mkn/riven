@@ -20,6 +20,18 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <header class="header">
-        
+    <header class="header container">
+        <?= get_custom_logo(); ?>
+
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <?php
+                printNavEls(get_queried_object_id(), 'header__nav-item h2-t'); ?>
+            </ul>
+        </nav>
+
+        <button class="header__burger">
+            <i class="icon-burger"></i>
+            <i class="icon-close"></i>
+        </button>
     </header>

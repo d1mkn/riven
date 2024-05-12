@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (firstRender) {
                 btn.addEventListener('click', () => {
                     if (text.hasAttribute('style')) {
+                        returnToTop();
                         text.removeAttribute('style');
                         item.classList.remove('active');
                         btn.classList.remove('active');
@@ -80,6 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.querySelector('.blog__item-text').removeAttribute('style');
                     item.querySelector('.blog__item-button').classList.remove('active');
                 }
+            });
+
+            returnToTop();
+        }
+
+        function returnToTop() {
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
             });
         }
     }

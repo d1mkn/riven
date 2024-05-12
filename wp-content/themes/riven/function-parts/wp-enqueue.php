@@ -13,7 +13,8 @@ function enqueue_styles_scripts()
     wp_enqueue_style('form-css', get_template_directory_uri() . '/dist/css/components/separate/form.css', [], _S_VERSION);
 
     //    script
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/js/main.js', [], _S_VERSION, true);
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/js/main.js', ['lodash-js'], _S_VERSION, true);
+    wp_enqueue_script('lodash-js', get_template_directory_uri() . '/dist/js/libs/lodash.min.js', [], _S_VERSION, true);
 }
 
 // ###############################################################################

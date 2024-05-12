@@ -9,7 +9,7 @@
  */
 
 ?>
-<footer class="footer container">
+<footer class="footer container" id="Контакти">
     <nav class="footer__nav">
         <ul class="footer__nav-list">
             <?php
