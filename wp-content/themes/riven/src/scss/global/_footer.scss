@@ -1,5 +1,157 @@
 @import '../base/base';
 
 .footer {
-    
+    &.container {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+
+        display: flex;
+
+        position: relative;
+
+        @media (max-width: $mobile) {
+            padding: 2.4rem 4rem 6rem;
+            flex-direction: column;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 11.2rem;
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+
+        &-list {
+            :not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &-item {
+            width: fit-content;
+
+            position: relative;
+
+            cursor: pointer;
+
+            &::after {
+                content: '';
+
+                width: 0%;
+                height: 0.1rem;
+
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                opacity: 0;
+                background-color: $dark-green;
+                transition: width 0.5s ease-in, opacity 0.5s linear;
+            }
+
+            &.current {
+                &::after {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__form-wrap {
+        width: 41.3rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: $mobile) {
+            margin-bottom: 3.6rem;
+            width: 100%;
+            position: static;
+            transform: none;
+        }
+
+        .form .wpforms-submit-container {
+            margin-top: 5rem;
+        }
+    }
+
+    &__form-title {
+        margin-bottom: 1.6rem;
+        text-align: center;
+    }
+
+    &__contacts {
+        margin-left: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: $mobile) {
+            margin: 0 auto;
+            max-width: 23rem;
+        }
+
+        &-title {
+            margin-bottom: 4rem;
+
+            @media (max-width: $mobile) {
+                text-align: center;
+            }
+        }
+
+        &-address {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-phone,
+        &-email {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__socials {
+        &-title {
+            margin-bottom: 2.9rem;
+            display: block;
+        }
+
+        &-icons {
+            display: flex;
+            gap: 3rem;
+
+            @media (max-width: $mobile) {
+                justify-content: center;
+            }
+        }
+
+        &-facebook {
+            width: 4rem;
+            height: 4rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 3.2rem;
+        }
+
+        &-instagram {
+            font-size: 4rem;
+        }
+
+        &-tiktok {
+            width: 4rem;
+            height: 4rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 3.1rem;
+        }
+    }
 }

@@ -29,4 +29,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     togglePopups();
     //#############################################################################
+
+    // go to the page after clicking on the tag with attribute [data-url]
+    function behaviorLink(selector) {
+        const items = document.querySelectorAll(selector);
+
+        if (items.length > 0) {
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const link = item.dataset.url;
+
+                    if (item.dataset.link === 'to-form') {
+                        appendGetParam(item, link);
+                    } else if (item.dataset.target === '_blank') {
+                        window.open(link, '_blank');
+                    } else {
+                        window.location.href = link;
+                    }
+                });
+            });
+        }
+    }
+    behaviorLink('[data-url]');
+    // #############################################
 });

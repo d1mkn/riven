@@ -10,7 +10,8 @@ if (!empty($promo_fields)) :
     $first_line_promo = $promo_fields['first_line_promo'] ?? '';
     $second_line_promo = $promo_fields['second_line_promo'] ?? '';
     $third_line_promo = $promo_fields['third_line_promo'] ?? ''; ?>
-    <section class="promo container">
+
+    <section class="promo container" id="Головна">
         <?php
         print_elem('figure', 'promo__img', wp_get_attachment_image(
             $image_promo,
@@ -50,5 +51,6 @@ if (!empty($promo_fields)) :
             </div>
         </dialog>
     </section>
+
 <?php
 endif;

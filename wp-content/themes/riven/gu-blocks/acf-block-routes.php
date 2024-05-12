@@ -9,7 +9,7 @@ if (!empty($routes_fields)) :
     $desk_image_routes = $routes_fields['desk_image_routes'] ?? '';
     $image_alt_routes = $routes_fields['image_alt_routes'] ?? ''; ?>
 
-    <section class="routes container">
+    <section class="routes container" id="Маршрути">
         <?php
         echo '<div class="routes__text-wrap">';
         print_elem('h2', 'routes__title h1-t', $title_routes);

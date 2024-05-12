@@ -53,3 +53,29 @@ function print_picture($img_desk_tag = null,  $img_mob_url = null, $class = null
 }
 
 ###############################################################################################
+
+/* Function to print navigation elements */
+function printNavEls($id, $class)
+{
+    if (is_plugin_active('advanced-custom-fields-pro/acf.php')) :
+        $current_blocks = parse_blocks(get_the_content('', false, $id)) ?? [];
+        $blocks_to_nav = array(
+            'acf/promo' => 'Головна',
+            'acf/benefits' => 'Переваги',
+            'acf/services' => 'Послуги',
+            'acf/about-us' => 'Про нас',
+            'acf/routes' => 'Маршрути',
+            'acf/blog' => 'Блог'
+        );
+
+        if (!empty($current_blocks)) :
+            foreach ($current_blocks as $block) :
+                if (isset($blocks_to_nav[$block['blockName']])) :
+                    print_elem('li', $class, $blocks_to_nav[$block['blockName']], 'data-url="#' . $blocks_to_nav[$block['blockName']] . '" data-nav');
+                endif;
+            endforeach;
+        endif;
+    endif;
+}
+
+###############################################################################################

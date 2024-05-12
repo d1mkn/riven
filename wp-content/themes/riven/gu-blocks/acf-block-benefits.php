@@ -7,7 +7,7 @@ if (!empty($benefits_fields)) :
     $subtitle_benefits = $benefits_fields['subtitle_benefits'] ?? '';
     $items_benefits = $benefits_fields['items_benefits'] ?? []; ?>
 
-    <section class="benefits container">
+    <section class="benefits container" id="Переваги">
         <?php
         print_elem('h2', 'benefits__title h1-t', $title_benefits);
         print_elem('p', 'benefits__subtitle s1-t', $subtitle_benefits);

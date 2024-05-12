@@ -8,7 +8,7 @@ if (!empty($blog_fields)) :
 
     if (!empty($items_blog)) : ?>
 
-        <section class="blog container">
+        <section class="blog container" id="Блог">
             <?php
             print_elem('h2', 'blog__title h1-t', $title_blog); ?>
 

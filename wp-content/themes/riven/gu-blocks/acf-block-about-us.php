@@ -9,7 +9,7 @@ if (!empty($about_us_fields)) :
     $second_title_about_us = $about_us_fields['second_title_about_us'] ?? '';
     $second_items_about_us = $about_us_fields['second_items_about_us'] ?? ''; ?>
 
-    <section class="about-us container">
+    <section class="about-us container" id="Про нас">
         <?php
         if (!empty($first_title_about_us) && !empty($first_items_about_us)) : ?>
             <div class="about-us__left">
@@ -66,7 +66,8 @@ if (!empty($about_us_fields)) :
                         <button class="splide__arrow splide__arrow--next" type="button"></button>
                     </div>
                 </div>
-            <?php
+            </div>
+        <?php
         endif; ?>
     </section>
 

@@ -6,7 +6,7 @@ if (!empty($services_fields)) :
     $title_services = $services_fields['title_services'] ?? '';
     $items_services = $services_fields['items_services'] ?? []; ?>
 
-    <section class="services container">
+    <section class="services container" id="Послуги">
         <?php
         print_elem('h2', 'services__title h1-t', $title_services);
 
