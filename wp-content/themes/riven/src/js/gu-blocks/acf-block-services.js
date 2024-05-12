@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.currentTarget.classList.toggle('active');
 
             if (items) toggleItemsVisibility(items);
+            if (!e.currentTarget.classList.contains('active')) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
         });
     }
 
