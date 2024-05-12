@@ -1,0 +1,148 @@
+@import '../base/base';
+
+.blog {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    position: relative;
+
+    @media (max-width: $mobile) {
+        padding: 2.4rem 1.4rem;
+    }
+
+    &::after {
+        content: '';
+
+        width: 100vw;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: -1;
+
+        transform: translateX(-50%);
+        background-color: $light-green;
+    }
+
+    &__title {
+        margin-bottom: 4rem;
+
+        @media (max-width: $mobile) {
+            margin-bottom: 1.8rem;
+        }
+    }
+
+    &__platform {
+        padding: 0 6.3rem;
+
+        @media (max-width: $mobile) {
+            padding: 0 2.4rem;
+        }
+    }
+
+    &__item {
+        width: 54.6rem;
+
+        border-radius: 1rem;
+
+        overflow: hidden;
+
+        &-title {
+            padding: 1rem;
+
+            width: 100%;
+
+            text-align: center;
+
+            border-radius: 1rem;
+            background-color: $milky;
+        }
+
+        &-content {
+            padding: 1.6rem 1.6rem 5.6rem;
+
+            position: relative;
+
+            border-radius: 1rem;
+            background-color: $milky;
+
+            @media (max-width: $mobile) {
+                padding: 0.8rem 0.65rem 6.6rem;
+            }
+        }
+
+        &-text {
+            width: 100%;
+            height: 22.4rem;
+            overflow: hidden;
+            transition: height 0.2s ease-in-out;
+
+            @media (max-width: $mobile) {
+                height: 25.6rem;
+            }
+
+            p {
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        &-button {
+            height: 3.5rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            position: absolute;
+            left: 50%;
+            bottom: 1.3rem;
+            transform: translateX(-50%);
+
+            text-align: center;
+
+            @media (max-width: $mobile) {
+                height: 4.2rem;
+            }
+
+            &.hidden {
+                height: 0;
+                width: 0;
+                display: none;
+                visibility: hidden;
+            }
+
+            &.active {
+                .blog__item-button-text-more {
+                    height: 0rem;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                .blog__item-button-text-less {
+                    height: 1.9rem;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            &-text-more,
+            &-text-less {
+                margin: 0 auto;
+                transition: height 0.2s linear, opacity 0.2s linear, visibility 0.2s;
+            }
+
+            &-text-more {
+                height: 1.9rem;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &-text-less {
+                height: 0rem;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+}

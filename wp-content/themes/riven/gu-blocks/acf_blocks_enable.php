@@ -142,7 +142,7 @@ if (function_exists('about_us')) {
 // ###############################################################################################
 
 /**
- * ACF Gutenberg Block "ACF Block routes"
+ * ACF Gutenberg Block "ACF Block Routes"
  */
 if (!function_exists('routes')) {
 
@@ -170,6 +170,43 @@ if (!function_exists('routes')) {
 
 if (function_exists('routes')) {
     add_action('acf/init', 'routes');
+}
+
+// ###############################################################################################
+
+/**
+ * ACF Gutenberg Block "ACF Block Blog"
+ */
+if (!function_exists('blog')) {
+
+    function blog()
+    {
+
+        acf_register_block_type(
+            [
+                'name'            => 'Blog',
+                'title'           => __('Blog'),
+                'render_callback' => 'theme_acf_blocks_render_callback',
+                'category'        => 'common',
+                'icon'            => 'editor-bold',
+                'keywords'        => ['title', 'subtitle', 'blog', 'slider'],
+                'mode'            => 'edit',
+                'enqueue_assets' => function () {
+                    if (!is_admin()) :
+                        wp_enqueue_style('blog-css', get_template_directory_uri() . '/dist/css/gu-blocks/acf-block-blog.css', ['splide-css'], _S_VERSION);
+                        wp_enqueue_style('splide-css', get_template_directory_uri() . '/dist/css/libs/splide/index.css', [], _S_VERSION);
+
+                        wp_enqueue_script('blog-js', get_template_directory_uri() . '/dist/js/gu-blocks/acf-block-blog.js',  ['splide-js'], _S_VERSION);
+                        wp_enqueue_script('splide-js', get_template_directory_uri() . '/dist/js/libs/splide.min.js', [], _S_VERSION, true);
+                    endif;
+                }
+            ]
+        );
+    }
+}
+
+if (function_exists('blog')) {
+    add_action('acf/init', 'blog');
 }
 
 // ###############################################################################################
